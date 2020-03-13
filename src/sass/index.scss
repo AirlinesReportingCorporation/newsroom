@@ -1,0 +1,468 @@
+@import "partials/bootstrap.grid";
+@import "partials/animate";
+@import "partials/dropdown";
+
+$arcteal: #189bb0;
+$fdsteal: #21b8d1;
+$darkblue: #363452;
+$darkbluergb: rgba(54, 52, 82, 0.9);
+$black: #333333;
+
+[v-cloak] {
+  display: none;
+}
+
+.dropdown-filter {
+  text-align: right;
+  .dropdown {
+    display: inline-block;
+
+    button {
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      box-shadow: none;
+      font-size: 0.875rem;
+      color: #6c6c6c;
+      width: 347px;
+      text-align: left;
+      min-height: 3rem;
+      padding: 0.875rem;
+      border-radius: 0;
+    }
+  }
+
+  .dropdown-toggle:before {
+    position: absolute;
+    right: 0;
+    background: $arcteal;
+    height: 100%;
+    top: 0;
+    color: #ffffff;
+    content: "";
+    width: 3.5rem;
+  }
+
+  .dropdown-toggle::after {
+    border: none;
+    transform: rotate(90deg);
+    font-family: "Icomoon";
+    position: absolute;
+    font-size: 1em;
+    right: 0;
+    top: 0;
+    margin: 18px 23px;
+    color: #ffffff;
+    content: "\e909";
+  }
+
+  .dropdown-menu {
+    width: 84%;
+    border-radius: 0;
+    margin-top: -1px;
+    padding: 0;
+  }
+
+  .dropdown-item {
+    border-bottom: 1px solid #dddddd;
+    color: #6c6c6c;
+    font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    padding: 0.875rem;
+  }
+}
+
+.newsroom .dropdown-filter {
+  display: none;
+}
+
+.media-kit {
+  background: #f6f6f6;
+  padding: 64px 0;
+}
+
+.ctaBtn--main {
+  border: none;
+  background: $arcteal;
+}
+
+.data-panel {
+  height: auto !important;
+  margin-top: 0;
+}
+
+.data-panel__inside {
+  display: none;
+}
+
+.data-panel .background {
+  position: relative;
+}
+
+.data-panel + footer {
+  margin-top: 0 !important;
+}
+
+.media-kit {
+  p {
+    font-family: RobotoSlab-Regular, Arial, Helvetica, sans-serif;
+    font-size: 1.15rem;
+  }
+}
+
+.page-grid,
+.media-mentions {
+  display: none;
+}
+
+.release-archive-filter {
+  max-width: 1013px;
+  margin: 60px auto;
+  h3 {
+    color: #000000;
+    font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+
+.newsroom,
+.release-archive {
+  font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+
+  .newsroom-jumbotron {
+    background: #242039
+      url("https://www2.arccorp.com/globalassets/homepage/redesign/slides/jumbotron_retina_Traxo.jpg")
+      center center no-repeat;
+    background-size: cover;
+    padding: 243px 0 53px 52px;
+    max-width: 1013px;
+    margin: 0 auto;
+
+    .mainPost {
+      max-width: 545px;
+
+      .mainTag {
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        padding-bottom: 0.5rem;
+        line-height: 1.25rem;
+      }
+
+      h2 {
+        color: #ffffff;
+        font-size: 2rem;
+        font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      }
+    }
+
+    .read-more {
+      height: 19px;
+      width: 82px;
+      color: #189bb0;
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0.43px;
+      line-height: 19px;
+      text-transform: uppercase;
+    }
+  }
+
+  .newsroom-nav {
+    display: none;
+    padding: 24px 0;
+    background: #ffffff;
+  }
+
+  .newsroom-content {
+    padding: 40px 0;
+    max-width: 1013px;
+    margin: 0 auto;
+
+    .ctaBtn {
+      margin-top: 87px;
+    }
+  }
+
+  .newsroom-posts {
+    background: #ffffff;
+    //border-radius: 16px;
+
+    h2 {
+      font-size: 2rem;
+      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      color: #585858;
+    }
+  }
+
+  .newsroom-post {
+    padding: 16px 0;
+    font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+    position: relative;
+
+    &:nth-child(3n + 1) {
+      .post-container {
+        margin-right: 14px;
+      }
+    }
+
+    &:nth-child(3n + 2) {
+      .post-container {
+        margin-left: 14px;
+        margin-right: 14px;
+      }
+    }
+
+    &:nth-child(3n + 3) {
+      .post-container {
+        margin-left: 14px;
+      }
+    }
+
+    .post-container {
+      display: block;
+
+      background: #ffffff;
+      height: 490px;
+      border: 1px solid #d8d8d8;
+
+      &:hover {
+        .post-image {
+          height: 235px;
+          transition: height 1s;
+        }
+        .post-meta {
+          height: 250px;
+          transition: height 1s;
+        }
+        .post-body {
+          display: block;
+        }
+      }
+    }
+
+    .post-title {
+      display: block;
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      color: $arcteal;
+      font-size: 20px;
+    }
+
+    .noImage {
+      .post-meta {
+        height: 100% !important;
+        border-top: 5px solid $arcteal;
+      }
+
+      .post-image {
+        display: none;
+      }
+
+      .post-title {
+        font-size: 26px;
+      }
+
+      .post-body {
+        display: block !important;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    }
+
+    .post-image {
+      height: 285px;
+      transition: height 1s;
+    }
+
+    .post-tags {
+      position: absolute;
+      bottom: 15px;
+      left: 25px;
+      text-transform: capitalize;
+      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      line-height: 1.25rem;
+      font-size: 0.875rem;
+      color: #87888b;
+    }
+
+    .post-meta {
+      height: 200px;
+      padding: 15px 25px;
+      background: #ffffff;
+      position: relative;
+      transition: height 1s;
+    }
+
+    .post-date {
+      font-size: 0.875rem;
+      color: #87888b;
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      line-height: 1.275rem;
+      margin-bottom: 4px;
+    }
+
+    .post-body {
+      display: none;
+      color: #6c6c6c;
+      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.34px;
+      line-height: 16px;
+      margin-top: 10px;
+    }
+
+    a {
+      font-family: SourceSansPro-Semibold, Arial, Helvetica, sans-serif;
+      font-size: 1.25rem;
+    }
+  }
+
+  .newsroom-sidebar {
+  }
+
+  .newsroom-sidebar-section {
+    background: #ffffff;
+    font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+    display: block;
+    padding: 16px;
+    //border-radius: 12px;
+    text-align: center;
+    margin-bottom: 16px;
+
+    strong {
+      font-family: SourceSansPro-Black, Arial, Helvetica, sans-serif;
+    }
+
+    h3 {
+      color: #242039;
+    }
+  }
+
+  .newsroom-mediakit {
+    background: #21b8d1;
+    color: #ffffff;
+    &:hover {
+      background: #59cadd;
+    }
+    h3 {
+      color: #ffffff;
+    }
+  }
+
+  .arrow-right {
+    &:after {
+      color: #ffffff;
+      font-family: "icomoon";
+      content: "\E909";
+      font-size: 0.75rem;
+      margin-left: 10px;
+    }
+  }
+
+  .newsroom-glossary {
+    background: $arcteal;
+    position: relative;
+    &:hover {
+      background: #21b8d1;
+    }
+
+    h3 {
+      display: inline-block;
+      color: #ffffff;
+      margin: 0;
+    }
+  }
+
+  .newsroom-inquiries {
+    background: #342e4f;
+    color: #ffffff;
+    h3 {
+      color: #ffffff;
+    }
+  }
+
+  .newsroom-archive {
+    margin-top: 36px;
+    a {
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      margin-top: 5px;
+      display: block;
+    }
+  }
+
+  .media-mentions-custom {
+    max-width: 1013px;
+    margin: 0 auto;
+    h3,
+    .post-title {
+      font-size: 2rem;
+      color: #585858;
+      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      margin-bottom: 38px;
+    }
+
+    .mention-container {
+      padding-top: 38px;
+      border-bottom: 1px solid #b7b7b7;
+      padding-bottom: 27px;
+    }
+
+    .mention-date {
+      color: #87888b;
+      font-size: 0.875rem;
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .mention-link {
+      color: $arcteal;
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+      font-size: 1.5rem;
+    }
+
+    .mention-tag {
+      margin-top: 25px;
+      color: #6c6c6c;
+      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .ctaBtn {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 768px) {
+  .sticky-nav__content {
+    border-top: solid 1px #f6f6f6;
+    border-bottom: solid 1px #f6f6f6;
+  }
+  .sticky-nav__inner {
+    max-width: 1013px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .newsroom-post {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .post-container {
+    height: auto;
+  }
+}

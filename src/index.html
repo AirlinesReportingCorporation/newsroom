@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js old-ie" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <title>Newsroom</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="description" content="The most recent news, articles and updates on issues that impact the travel industry." />
+  <meta name="keywords" content="news, thought leadership, articles and trends, trends, issues, travel industry, media, press releases, news releases, industry trends, ARC news, latest, news" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+  <link rel="icon" type="image/x-icon" href="https://www2.arccorp.com/favicon.ico" />
+  <link rel="stylesheet" href="https://arcintgepi.arccorp.com/globalassets/static/style.css?982378423984723" />
+  <link rel="stylesheet" href="https://arcintgepi.arccorp.com/globalassets/style/main.min.css?262d342133e24290" />
+
+  <link rel="stylesheet" href="newsroom.min.css">
+
+
+</head>
+
+<body class=" 10298">
+
+
+
+  <div class="navcontainer signedOut" data-username="">
+
+    <!-- supernav start -->
+    <div class="supernav" v-on:mouseleave="navPanelReset()">
+
+      <!-- start topnav -->
+      <div class="supernav-topnav" v-click-outside="hideLogin" v-on:mouseenter="navPanelReset()">
+        <div class="supernav-topnav-inner">
+          <form class="topnav-search" action="/search/" method="get" v-show="showSearch" v-cloak>
+            <input type="text" name="q" id="topnav-search-input" ref="search" v-cloak>
+            <div class="icon-close" v-on:click="toggleSearch()" v-cloak></div>
+            <button type="submit" class="icon-search" id="topnav-search-button" value="submit"></button>
+          </form>
+          <a href="#" class="topnav-link show-search icon-search" v-on:click="toggleSearch()" v-show="!showSearch"></a>
+          <a href="/about-us/contact-us/" class="topnav-link">Contact Us</a>
+          <a href="#" class="topnav-link topnav-myarc" v-on:click="showPopup('loginActive')">My ARC</a>
+          <div class="supernav-login" v-show="loginActive" v-cloak>
+            <div class="supernav-login-inner">
+              <div class="supernav-loggedin">
+                You are currently logged in as <div class="supernav-myarc-username"></div>
+                <a target="_blank" href="https://intgmyarc.arccorp.com/" class="ctaBtn">My ARC</a>
+                <a target="_blank" href="https://intgmyarc.arccorp.com/PortalApp/ARCGateway.portal?_nfpb=true&_st=&_pageLabel=ARC_Login&_name=logout&_nfls=false" class="ctaBtn">Log Out</a>
+              </div>
+              <form id="frmMyARCLogin" name="frmMyARCLogin" method="POST" action="https://intgmyarc.arccorp.com/PortalApp/PreLogin.portal">
+
+                <input type="text" id="myarcusername" name="user" placeholder="Username">
+
+                <input type="password" id="myarcpassword" name="password" placeholder="Password">
+                <div class="supernav-submit">
+                  <button title="submit form" class="ctaBtn ctaBtn--main" type="submit">
+                    Log In
+                  </button>
+                </div><br />
+                <a href="https://myarc.arccorp.com/PortalApp/ArcPublicPortal.portal?_nfpb=true&_pageLabel=MyARC_ForgotUserName&_nfls=false" target="_blank" class="forgotUsername">Forgot Username?</a>
+                <a href="https://myarc.arccorp.com/PortalApp/ArcPublicPortal.portal?_nfpb=true&_pageLabel=ARC_ForgotPassword&_nfls=false" target="_blank" class="forgotUsername">Forgot Password?</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end top nav -->
+
+      <!-- start menu nav -->
+      <div style="position: relative; z-index: 104; background: #ffffff;">
+        <div class="supernav-inner">
+          <div class="supernav-mobile-icon">
+            <div class="hamburger icon-menu"></div>
+          </div>
+
+          <div class="logo-inner">
+            <div class="logo">
+              <a href="/" class="logo-link icon-arc-logo" title="logo"></a>
+            </div>
+          </div>
+          <div class="supernav-mobile-menu">
+            <div class="row">
+              <div class="col"><a href="#" class="supernav-menu-item" v-on:click="navPanelSwitch('products')">
+                  Products
+                </a></div>
+              <div class="col"><a href="#" class="supernav-menu-item" v-on:click="navPanelSwitch('participation')">
+                  Participation
+                </a></div>
+              <div class="col"><a href="#" class="supernav-menu-item" v-on:click="navPanelSwitch('community')">
+                  Communications
+                </a></div>
+            </div>
+            <div class="row">
+              <div class="col"><a href="#" class="supernav-menu-item" v-on:click="navPanelSwitch('training')">
+                  Training
+                </a></div>
+              <div class="col"><a href="#" class="supernav-menu-item" v-on:click="navPanelSwitch('support')">
+                  Support
+                </a></div>
+              <div class="col"><a href="#" class="supernav-menu-item" v-on:click="navPanelSwitch('about')">
+                  About ARC
+                </a></div>
+            </div>
+          </div>
+          <div class="supernav-menu">
+
+            <div class="supernav-menu-items">
+              <a href="#" class="supernav-menu-item" v-bind:class="{ active : primaryNavCheck('products') }" v-on:mouseover="navPanelSwitch('products')" v-on:click="navPanelSwitch('products')">
+                Products
+              </a>
+              <a href="#" class="supernav-menu-item" v-bind:class="{ active : primaryNavCheck('participation') }" v-on:mouseover="navPanelSwitch('participation')" v-on:click="navPanelSwitch('participation')">
+                Participation
+              </a>
+              <a href="#" class="supernav-menu-item" v-bind:class="{ active : primaryNavCheck('community') }" v-on:mouseover="navPanelSwitch('community')" v-on:click="navPanelSwitch('community')">
+                Communications
+              </a>
+              <a href="#" class="supernav-menu-item" v-bind:class="{ active : primaryNavCheck('training') }" v-on:mouseover="navPanelSwitch('training')" v-on:click="navPanelSwitch('training')">
+                Training
+              </a>
+              <a href="#" class="supernav-menu-item" v-bind:class="{ active : primaryNavCheck('support') }" v-on:mouseover="navPanelSwitch('support')" v-on:click="navPanelSwitch('support')">
+                Support
+              </a>
+              <a href="#" class="supernav-menu-item" v-bind:class="{ active : primaryNavCheck('about') }" v-on:mouseover="navPanelSwitch('about')" v-on:click="navPanelSwitch('about')">
+                About ARC
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end menu nav -->
+
+      <!-- products sub nav -->
+
+      <div class="supernav-sub supernav-sub-products animated" v-bind:class="{ fadeInDown : primaryNavCheck('products') }" v-show="primaryNav === 'products'" v-cloak>
+        <div class="supernav-sub-inner row">
+          <div class="supernav-sub-main col-md-12">
+            <div class="supernav-header supernav-header-nonlink">
+              Data Products
+            </div>
+          </div>
+        </div>
+
+        <!-- data products -->
+        <div class="supernav-sub-inner row">
+          <div class="supernav-sub-main col-md-3">
+            <a href="/products-participation/products/?link=agencies&utm_source=Global_Navigation" class="supernav-header">
+              Travel Agencies
+            </a>
+            <a href="/products-participation/products/agency-bi/?utm_source=Global_Navigation" class="supernav-sub-link">Agency BI</a>
+            <a href="/products-participation/products/aria/?utm_source=Global_Navigation" class="supernav-sub-link">Aria</a>
+            <a href="/products-participation/products/memo-analyzer-for-agencies/?utm_source=Global_Navigation" class="supernav-sub-link">Memo Analyzer for Agencies</a>
+            <a href="/products-participation/products/memo-manager/?utm_source=Global_Navigation" class="supernav-sub-link">Memo Manager</a>
+
+            <a href="/products-participation/products/?link=agencies&utm_source=Global_Navigation" class="supernav-sub-link supernav-viewall">View All</a>
+          </div>
+          <div class="supernav-sub-main col-md-3">
+            <a href="/products-participation/products/?link=airlines&utm_source=Global_Navigation" class="supernav-header">Airlines</a>
+
+            <a href="/products-participation/products/airline-bi/?utm_source=Global_Navigation" class="supernav-sub-link">Airline BI</a>
+            <a href="/products-participation/products/arc-custom-reports/?utm_source=Global_Navigation&utm_campaign=Airlines" class="supernav-sub-link">Custom Reports</a>
+            <a href="/products-participation/products/direct-data-solutions/?utm_source=Global_Navigation" class="supernav-sub-link">Direct Data Solutions</a>
+            <a href="/products-participation/products/memo-analyzer-for-airlines/?utm_source=Global_Navigation" class="supernav-sub-link">Memo Analyzer for Airlines</a>
+            <!--<a href="#" class="supernav-sub-link">Memo Manager</a>-->
+
+            <a href="/products-participation/products/?link=airlines&utm_source=Global_Navigation" class="supernav-sub-link supernav-viewall">View All</a>
+          </div>
+          <div class="supernav-sub-main col-md-3">
+            <a href="/products-participation/products/?link=corporations&utm_source=Global_Navigation" class="supernav-header">Corporate Travel Programs</a>
+            <a href="/products-participation/products/air-program-monitor/?utm_source=Global_Navigation" class="supernav-sub-link">Air Program Monitor</a>
+            <a href="/products-participation/products/corporate-bi/?utm_source=Global_Navigation" class="supernav-sub-link">Corporate BI</a>
+            <a href="/products-participation/products/transaction-history-file/?utm_source=Global_Navigation" class="supernav-sub-link">Transaction History File</a>
+            <a href="/products-participation/products/?link=corporations&utm_source=Global_Navigation" class="supernav-sub-link supernav-viewall">View All</a>
+          </div>
+          <div class="supernav-sub-main col-md-3">
+            <a href="/products-participation/products/?link=other&utm_source=Global_Navigation" class="supernav-header">Other Data Users</a>
+            <a href="/products-participation/products/arc-custom-reports/?utm_source=Global_Navigation&utm_campaign=Other_Data_Users" class="supernav-sub-link">Custom Reports</a>
+            <a href="/products-participation/products/financial-industry-reports/?utm_source=Global_Navigation" class="supernav-sub-link">Financial Industry Reports</a>
+            <a href="/products-participation/products/global-agency-pro/?utm_source=Global_Navigation" class="supernav-sub-link">Global Agency Pro</a>
+            <a href="/products-participation/products/market-locator/?utm_source=Global_Navigation" class="supernav-sub-link">Market Locator</a>
+            <a href="/products-participation/products/?link=other&utm_source=Global_Navigation" class="supernav-sub-link supernav-viewall">View All</a>
+          </div>
+        </div>
+
+        <!--distribution, payments, enhanced products-->
+        <div class="supernav-sub-inner row">
+          <div class="supernav-sub-main col-md-3">
+            <div class="supernav-header supernav-header-nonlink">
+              Distribution
+            </div>
+            <a href="/products-participation/distribution/?utm_source=Global_Navigation" class="supernav-header" style="margin-bottom:0;">New Distribution Capability (NDC)</a>
+            <a href="/about-us/settlement-services/?utm_source=Global_Navigation" class="supernav-header">Settlement</a>
+            <a href="/products-participation/travel-agencies/agency-participation/participation-products/DRS/?utm_source=Global_Navigation" class="supernav-sub-link">Document Retrieval Service (DRS)</a>
+            <a href="/products-participation/travel-agencies/agency-participation/participation-products/IAR/?utm_source=Global_Navigation" class="supernav-sub-link">Interactive Agent Reporting (IAR)</a>
+            <a href="/products-participation/travel-agencies/agency-participation/participation-products/ISS/?utm_source=Global_Navigation" class="supernav-sub-link">Internet Sales Summary (ISS)</a>
+
+          </div>
+          <div class="supernav-sub-main col-3">
+            <div class="supernav-header supernav-header-nonlink" style="margin-bottom:15px;">
+              Payment
+            </div>
+            <a href="/products-participation/products/travel-agency-service-fee/?utm_source=Global_Navigation" class="supernav-sub-link">Travel Agency Service Fee (TASF)</a>
+
+          </div>
+          <div class="supernav-sub-main col-3">
+
+            <div class="supernav-header supernav-header-nonlink" style="margin-bottom:15px;">Business Services</div>
+
+            <a href="/products-participation/products/aerogram/?utm_source=Global_Navigation" class="supernav-sub-link">AeroGram</a>
+            <a href="/products-participation/products/arc-irs-1099-processing-service/?utm_source=Global_Navigation" class="supernav-sub-link">ARC's IRS 1099 Processing Service</a>
+            <a href="/products-participation/products/printables-collection/?utm_source=Global_Navigation" class="supernav-sub-link">Printables Collection</a>
+            <a href="/products-participation/products/revenue-recovery-service/?utm_source=Global_Navigation" class="supernav-sub-link">Revenue Recovery Service (RRS)</a>
+
+            <a href="/products-participation/products/?utm_source=Global_Navigation" class="supernav-sub-link supernav-viewall">View All</a>
+
+          </div>
+        </div>
+
+        <!-- bottom featured product section-->
+        <!--
+        <div style="background: #ece9e7; margin-top: 30px; padding: 30px 0;">
+        <div class="supernav-sub-inner row">
+          <div class="supernav-sub-main col-md-3">
+            img
+          </div>
+          <div class="supernav-sub-main col-md-9">
+            <a href="/articles-trends/sales-statistics/" class="supernav-header">
+              Case Studies
+            </a>
+          </div>
+        </div>
+      </div>
+      -->
+      </div>
+
+
+      <!-- participation sub nav -->
+
+      <div class="supernav-sub animated" v-bind:class="{ fadeInDown : primaryNavCheck('participation') }" v-show="primaryNav === 'participation'" v-cloak>
+
+        <div class="row no-gutters" style="max-width: 100%">
+          <div class="col-6">
+            <div class="supernav-sub-container supernav-sub-container-right">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6">
+
+                  <a href="/products-participation/travel-agencies/?utm_source=Global_Navigation" class="supernav-header">
+                    Travel Agencies
+                  </a>
+                  <a href="/products-participation/travel-agencies/agency-participation/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Agency Accreditation</a>
+
+                  <a href="/products-participation/travel-agencies/become-an-arc-accredited-agent/?utm_source=Global_Navigation" class="supernav-sub-link">
+                    Become an ARC-Accredited Agent
+                  </a>
+                  <a href="/products-participation/travel-agencies/vtc-participation/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Verified Travel Consultant Program</a>
+                  <a href="/products-participation/travel-agencies/become-an-arc-verified-travel-consultant/?utm_source=Global_Navigation" class="supernav-sub-link">Become an ARC Verified Travel Consultant</a>
+
+                </div>
+                <div class="supernav-sub-main col-md-6">
+                  <a href="/products-participation/airlines/?utm_source=Global_Navigation" class="supernav-header">
+                    Airlines
+                  </a>
+                  <a href="/products-participation/airlines/airline-participation/?utm_source=Global_Navigation" class="supernav-sub-link">ARC's Settlement Services for Airlines</a>
+                  <a href="/products-participation/airlines/become-an-arc-airline/?utm_source=Global_Navigation" class="supernav-sub-link">Become an ARC Participating Airline</a>
+                  <a href="/products-participation/airlines/airline-participation/participating-carrier-application-request/?utm_source=Global_Navigation" class="supernav-sub-link">Participating Airline Application Request</a>
+                  <a href="/products-participation/airlines/airline-participation/participating-carriers/?utm_source=Global_Navigation" class="supernav-sub-link">Current ARC Participating Airlines</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6" style="background: #f6f6f6;">
+            <div class="supernav-sub-container supernav-sub-container-left">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6" style="background: #ffffff;">
+                  <a href="/products-participation/corporations/?utm_source=Global_Navigation " class="supernav-header">
+                    Corporations
+                  </a>
+                  <a href="/products-participation/corporations/corporate-travel-department-participation/?utm_source=Global_Navigation" class="supernav-sub-link">Corporate Travel Department Program</a>
+                  <a href="/products-participation/corporations/become-an-arc-corporate-travel-department/?utm_source=Global_Navigation" class="supernav-sub-link">Become an ARC Corporate Travel Department</a>
+                  <a href="/support-training/ctd-faqs/?utm_source=Global_Navigation" class="supernav-sub-link">Corporate Travel Department FAQs</a>
+
+
+                </div>
+                <div class="supernav-sub-main col-md-6" style="background: #f6f6f6; text-align:center;">
+                  <div class="supernav-participation-stats" style="color: #333333;">
+                    Emerging Models <br />for NDC
+                  </div>
+                  <a href="/articles-trends/the-latest/navigating-one-to-one-relationships-in-a-many-to-many-airline-distribution-world/?utm_source=Global_Navigation" class="supernav-header">Learn More</a>
+                  <img src="https://www2.arccorp.com/globalassets/homepage/redesign/participation_feature4.png" alt="participation">
+                  <!--
+                <div style="padding-left:15px;">
+                  <div class="supernav-participation-title">
+                    Preparing for Takeoff 2016
+                  </div>
+                  <div class="supernav-participation-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </div>
+                  <div class="supernav-header">
+                    Call to Action
+                  </div>
+                </div>-->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- community sub nav -->
+
+      <div class="supernav-sub animated" v-bind:class="{ fadeInDown : primaryNavCheck('community') }" v-show="primaryNav === 'community'" v-cloak>
+        <div class="supernav-sub-inner row">
+          <div class="supernav-sub-main col-md-3">
+            <a href="/articles-trends/the-latest/?utm_source=Global_Navigation" class="supernav-header">The Latest</a>
+            <a href="/about-us/newsroom/?utm_source=Global_Navigation" class="supernav-sub-link">Newsroom</a>
+            <a href="/articles-trends/the-latest/?link=researchThoughtLeadership&utm_source=Global_Navigation" class="supernav-sub-link">Research & Thought Leadership</a>
+            <a href="/articles-trends/the-latest/?link=webinars&utm_source=Global_Navigation" class="supernav-sub-link">On-Demand Webinars</a>
+            <a href="/articles-trends/the-latest/?link=caseStudies&utm_source=Global_Navigation" class="supernav-sub-link">Case Studies</a>
+            <a href="/products-participation/customer-success-stories/?utm_source=Global_Navigation" class="supernav-sub-link">Customer Success Stories</a>
+
+            <a href="/about-us/events/?utm_source=Global_Navigation" class="supernav-sub-link">Events</a>
+
+          </div>
+          <div class="supernav-sub-main col-md-3">
+            <a href="/articles-trends/agency-communications/?utm_source=Global_Navigation" class="supernav-header">
+              Agency Communications
+            </a>
+            <a href="/articles-trends/agency-communications/agent-newsletter/?utm_source=Global_Navigation" class="supernav-sub-link">Agent Newsletter</a>
+            <a href="/articles-trends/agency-communications/airline-participation-announcements/?utm_source=Global_Navigation" class="supernav-sub-link">Airline Participation Announcements</a>
+            <a href="/support-training/fraud-prevention/fraud-alerts/?utm_source=Global_Navigation" class="supernav-sub-link">Fraud Alerts</a>
+
+            <a href="/articles-trends/agency-communications/travel-agent-communications/?utm_source=Global_Navigation" class="supernav-sub-link">Travel Agent Communications (TAC)</a>
+
+          </div>
+          <div class="supernav-sub-main col-md-3">
+            <a href="/articles-trends/airline-communications/?utm_source=Global_Navigation" class="supernav-header">
+              Airline Communications
+            </a>
+            <a href="/articles-trends/airline-communications/airline-newsletter/?utm_source=Global_Navigation" class="supernav-sub-link">Airline Newsletter</a>
+            <a href="/articles-trends/agency-communications/airline-participation-announcements/?utm_source=Global_Navigation" class="supernav-sub-link">Airline Participation Announcements</a>
+            <a href="/support-training/fraud-prevention/fraud-alerts/?utm_source=Global_Navigation" class="supernav-sub-link">Fraud Alerts</a>
+
+
+          </div>
+          <div class="supernav-sub-main col-md-3">
+            <a href="/support-training/working-groups/?utm_source=Global_Navigation" class="supernav-header">Working Groups</a>
+            <a href="/support-training/working-groups/debit-memo-working-group-dmwg/?utm_source=Global_Navigation" class="supernav-sub-link">Debit Memo Working Group (DMWG)</a>
+            <a href="/support-training/working-groups/arc-payments-forum/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Payments Forum</a>
+          </div>
+
+        </div>
+
+        <!--
+        <div style="background: #ece9e7;">
+          <div class="supernav-sub-inner row">
+            <div class="supernav-sub-main col-md-3">
+              img
+            </div>
+            <div class="supernav-sub-main col-md-9">
+              <a href="/articles-trends/sales-statistics/" class="supernav-header">
+                Case Studies
+              </a>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+
+      <!-- training sub nav -->
+
+      <div class="supernav-sub animated" v-bind:class="{ fadeInDown : primaryNavCheck('training') }" v-show="primaryNav === 'training'" v-cloak>
+
+        <div class="row no-gutters" style="max-width: 100%">
+          <div class="col-6">
+            <div class="supernav-sub-container supernav-sub-container-right">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6">
+                  <a href="/support-training/travel-agencies/?utm_source=Global_Navigation" class="supernav-header">Travel Agencies</a>
+
+                  <a href="/support-training/travel-agencies/custom-training/?utm_source=Global_Navigation" class="supernav-sub-link">Agent Custom Training</a>
+                  <a href="/support-training/arc-online-training/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Online Training</a>
+                  <a href="/products-participation/travel-agencies/agency-participation/arc-specialist-certification/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Specialist Training & Certification</a>
+                  <a href="/support-training/travel-agencies/Self-help-training/?utm_source=Global_Navigation" class="supernav-sub-link">Self-Paced Training Knowledge Center</a>
+
+
+                </div>
+                <div class="supernav-sub-main col-md-6">
+                  <a href="/support-training/airlines/airline-training/?utm_source=Global_Navigation" class="supernav-header">Airlines</a>
+                  <a href="/support-training/airlines/airline-training/?utm_source=Global_Navigation#arc101" class="supernav-sub-link">ARC 101</a>
+                  <a href="/support-training/airlines/airline-training/?utm_source=Global_Navigation#agencylifecycle" class="supernav-sub-link">Agency Life Cycle</a>
+                  <a href="/support-training/airlines/airline-training/?utm_source=Global_Navigation#reporting" class="supernav-sub-link">Reporting & Settlement</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6" style="background:#f6f6f6;">
+            <div class="supernav-sub-container supernav-sub-container-left">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6">
+                  <div class="supernav-webinar">
+                    <a href="/articles-trends/the-latest/?link=webinars&utm_source=Global_Navigation&utm_campaign=Feature" class="supernav-header no-arrow">On-Demand Webinars</a>
+                    <div class="supernav-webinar-title">
+                      Build your knowledge of ARC and the travel industry.
+                    </div>
+
+                    <a href="/articles-trends/the-latest/?link=webinars&utm_source=Global_Navigation&utm_campaign=Feature" class="supernav-header">
+                      View All
+                    </a>
+                  </div>
+                </div>
+                <div class="supernav-sub-main col-md-6">
+                  <img src="https://www2.arccorp.com/globalassets/homepage/redesign/training_feature3.png" alt="training">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- support sub nav -->
+
+      <div class="supernav-sub animated" v-bind:class="{ fadeInDown : primaryNavCheck('support') }" v-show="primaryNav === 'support'" v-cloak>
+
+        <div class="row no-gutters" style="max-width: 100%">
+          <div class="col-6">
+            <div class="supernav-sub-container supernav-sub-container-right">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6">
+
+                  <div class="supernav-header supernav-header-nonlink">
+                    ARC Resources
+                  </div>
+                  <a target="_blank" href="https://arcintgepi.arccorp.com/globalassets/forms/agencyfees_2018.pdf/?utm_source=Global_Navigation" class="supernav-sub-link">2018 ARC Agency Fees</a>
+                  <a href="/support-training/holiday-schedule/?utm_source=Global_Navigation" class="supernav-sub-link">2018 Holiday Schedule</a>
+                  <a href="/support-training/airlines/processing-schedule/?utm_source=Global_Navigation" class="supernav-sub-link">2018 Processing Schedule</a>
+                  <a href="/support-training/airlines/airline-ticket-matrix/?utm_source=Global_Navigation" class="supernav-sub-link">Airline Ticket Matrix</a>
+                  <a href="/support-training/airlines/airline-ancillary-matrix/?utm_source=Global_Navigation" class="supernav-sub-link">Airline Ancillary Matrix</a>
+                  <a href="/support-training/arc-check-results/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Check</a>
+                  <a href="https://arcdrs.arccorp.com/drs/login.jsp" target="_blank" class="supernav-sub-link">Document Retrieval Service (DRS)</a>
+                  <a target="_blank" href="https://arcintgepi.arccorp.com/globalassets/forms/exception_transactions.pdf/?utm_source=Global_Navigation" class="supernav-sub-link">Exception Transactions</a>
+                  <a href="https://uatmyarc.arccorp.com/PortalApp/PreLogin.portal" target="_blank" class="supernav-sub-link">UAT Access</a>
+
+                </div>
+                <div class="supernav-sub-main col-md-6">
+                  <div class="supernav-header supernav-header-nonlink">
+                    Agency Resources
+                  </div>
+
+                  <a href="/support-training/agent-reporting-agreement/?utm_source=Global_Navigation" class="supernav-sub-link">Agent Reporting Agreement (ARA)</a>
+                  <a href="/support-training/industry-agents-handbook/?utm_source=Global_Navigation" class="supernav-sub-link">Industry Agents' Handbook (IAH)</a>
+                  <a href="/support-training/forms-catalog-accreditation/?utm_source=Global_Navigation" class="supernav-sub-link">Forms Catalog - Accreditation</a>
+                  <a href="/support-training/arc-accredited-agency-mark/?utm_source=Global_Navigation" class="supernav-sub-link">ARC Accreditation Mark</a>
+                  <a href="/support-training/gds-contact-information/?utm_source=Global_Navigation" class="supernav-sub-link">GDS Contact Information</a>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="supernav-sub-container supernav-sub-container-left">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6" style="background: #ffffff;">
+                  <div class="supernav-header supernav-header-nonlink">
+                    Airline Resources
+                  </div>
+
+                  <a target="_blank" href="https://arcintgepi.arccorp.com/globalassets/forms/ops/creditcard-acceptance-chart.pdf/?utm_source=Global_Navigation" class="supernav-sub-link">Credit Card Acceptance Chart</a>
+                  <a href="/support-training/airlines/information-on-agency-accreditation-for-airlines/?utm_source=Global_Navigation" class="supernav-sub-link">Information on Agency Accreditation for Airlines</a>
+                  <a href="/support-training/airline-participation-faqs/?utm_source=Global_Navigation" class="supernav-sub-link">Airline Participation FAQs</a>
+                  <a href="/support-training/agency-locator/?utm_source=Global_Navigation" class="supernav-sub-link">Agency Locator</a>
+
+
+                  <a href="/products-participation/airlines/airline-participation/participating-carriers/?utm_source=Global_Navigation" class="supernav-sub-link">Participating Airlines</a>
+                  <br /><br /><br />
+                </div>
+                <div class="supernav-sub-main col-md-6">
+
+                  <div class="supernav-header supernav-header-nonlink">
+                    Fraud Prevention Resources
+                  </div>
+
+                  <a href="/support-training/fraud-prevention/best-practices/?utm_source=Global_Navigation" class="supernav-sub-link">Best Practices</a>
+                  <a href="/support-training/fraud-prevention/convictions/?utm_source=Global_Navigation" class="supernav-sub-link">Convictions</a>
+                  <a href="/support-training/fraud-prevention/digitally-altered-images/?utm_source=Global_Navigation" class="supernav-sub-link">Digitally Altered Images</a>
+                  <a href="/support-training/fraud-prevention/?utm_source=Global_Navigation" class="supernav-sub-link">Fraud Prevention</a>
+                  <a href="/support-training/fraud-prevention/free-internet-tools/?utm_source=Global_Navigation" class="supernav-sub-link">Free Internet Tools</a>
+                  <a href="/support-training/fraud-prevention/partners-in-fraud-prevention/?utm_source=Global_Navigation" class="supernav-sub-link">Partners in Fraud Prevention</a>
+                  <a href="/support-training/fraud-prevention/schemes/?utm_source=Global_Navigation" class="supernav-sub-link">Schemes</a>
+
+                  <!-- <div class="supernav-contact">
+                      <div class="supernav-contact-title">
+                        Help
+                      </div>
+                      <a href="/about-us/contact-us/" class="supernav-header">
+                        Contact Us
+                      </a>
+
+                    </div>
+                    <img class="contact-image" src="https://www2.arccorp.com/globalassets/homepage/redesign/support.png" alt="Support"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+      <!-- about sub nav -->
+
+      <div class="supernav-sub animated" v-bind:class="{ fadeInDown : primaryNavCheck('about') }" v-show="primaryNav === 'about'" v-cloak>
+
+        <div class="row no-gutters" style="max-width: 100%">
+          <div class="col-6">
+            <div class="supernav-sub-container supernav-sub-container-right">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6">
+                  <div class="supernav-header supernav-header-nonlink">
+                    Who We Are
+                  </div>
+                  <a href="/about-us/our-story/?utm_source=Global_Navigation" class="supernav-sub-link">
+                    Our Story
+                  </a>
+                  <a href="/about-us/our-story/arc-brand/?utm_source=Global_Navigation" class="supernav-sub-link">
+                    About the Brand
+                  </a>
+                  <a href="/about-us/leadership-governance/?utm_source=Global_Navigation" class="supernav-sub-link">Leadership & Governance</a>
+                </div>
+                <div class="supernav-sub-main col-md-6">
+                  <div class="supernav-header supernav-header-nonlink">
+                    What We Do
+                  </div>
+                  <a href="/about-us/settlement-services/?utm_source=Global_Navigation" class="supernav-sub-link">
+                    Settlement Services
+                  </a>
+                  <a href="/articles-trends/sales-statistics/?utm_source=Global_Navigation" class="supernav-sub-link">
+                    Airline Sales Statistics
+                  </a>
+                  <a href="/about-us/our-data/?utm_source=Global_Navigation" class="supernav-sub-link">Our Data</a>
+                  <a href="/about-us/our-technology/?utm_source=Global_Navigation" class="supernav-sub-link">Our Technology</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="supernav-sub-container supernav-sub-container-left">
+              <div class="row justify-content-end">
+                <div class="supernav-sub-main col-md-6">
+                  <div class="supernav-header supernav-header-nonlink">
+                    Join Us
+                  </div>
+                  <a href="/about-us/careers/?utm_source=Global_Navigation" class="supernav-sub-link">
+                    Careers
+                  </a>
+
+
+                </div>
+                <div class="supernav-sub-main col-md-6">
+                  <div class="supernav-story">
+                    <div class="supernav-header supernav-header-nonlink">
+                      Get Help
+                    </div>
+                    <a href="/about-us/contact-us/?utm_source=Global_Navigation" class="supernav-sub-link">
+                      Contact Us
+                    </a>
+
+                  </div>
+                </div>
+                <!--
+                  <div class="supernav-sub-main col-md-3">
+                    <img src="https://www2.arccorp.com/globalassets/homepage/redesign/story.png" alt="Careers">
+                  </div>-->
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- supernav end -->
+  </div>
+  <h1 style="display:none;">The Latest</h1>
+
+  <section class="data-panel data-panel--white" data-fullscreenimageblock="true" data-section="data-panel">
+    <div class="background">
+
+      <!-- newsroom page START -->
+      <div class="newsroom" v-cloak>
+        <div class="newsroom-jumbotron">
+              <div class="mainPost animated fadeInDown">
+                <div class="mainTag">News Release &nbsp;&centerdot;&nbsp; FEBRUARY 6, 2020</div>
+                <h2>ARC President and CEO Mike Premo to Speak at CCRA's PowerSolutions</h2>
+                <a href="" class="read-more">Read More</a>
+              </div>
+        </div>
+        <div id="sticky-wrapper" class="sticky-wrapper" style="height: 93px;"><nav class="sticky-nav--collapsed" data-nav-type="sticky">
+            <header class="sticky-nav__header"><span>On this page</span></header>
+            <section class="sticky-nav__content">
+                  <div class="sticky-nav__inner clearfix">
+                  <ul class="sticky-nav__linksList sticky-nav__count-4">
+                    <li class="sticky-nav__linkItem">
+                      <a href="/about-us/newsroom/2019-news-releases/" title="Archive" class="sticky-nav__link">Archive</a>
+                    </li>
+                    <li class="sticky-nav__linkItem">
+                      <a href="/about-us/newsroom/media-mentions/" title="Media Mentions" class="sticky-nav__link">Media Mentions</a>
+                    </li>
+                    <li class="sticky-nav__linkItem">
+                      <a href="/about-us/newsroom/media-kit/" title="Media Kit" class="sticky-nav__link">Media Kit</a>
+                    </li>
+                    <li class="sticky-nav__linkItem">
+                      <a href="/about-us/contact-us/" title="Contact Us" class="sticky-nav__link">Contact Us</a>
+                    </li>
+                  </ul>
+                          <div class="sticky-nav__ctaItem">
+          
+                  <a href="mailto:pabzug@arccorp.com" title="Media Inquiries" class="ctaLink ctaLink--right-arrow">Media Inquiries<i class="icon-right-arrow"></i></a>
+          
+                  </div>
+                  </div>
+            </section>
+          </nav></div>
+        <div class="newsroom-content">
+          <div class="newsroom-posts">
+            <div class="row no-gutters">
+              <div class="col-lg-12">
+                  <h2>Newsroom</h2>
+                  <h3>News Releases</h3>
+              </div>
+            </div>
+            
+            <div class="row no-gutters">
+            <div class="col-lg-4 newsroom-post" v-for="post in posts">
+              <a class="post-container" v-bind:href="post.postLink" v-bind:class="{noImage: showThumbnail(post)}">
+                <div class="post-image" v-bind:style="{background: post.postImage  }">
+
+                </div>
+                <div class="post-meta">
+                <div class="post-date">
+                    {{post.postDate}}
+                  </div>
+                <span v-bind:href="post.postLink" class="post-title">
+                    {{post.postTitle}}
+                </span>
+                <div class="post-body animate fadeIn">
+                  {{post.postBody}}
+                </div>
+                <div class="post-tags">
+                  {{post.postDate}}
+                </div>
+              </div>
+            </a>
+            </div>
+          </div>
+          </div>
+          <div style="text-align: center;">
+          <a href="" class="ctaBtn">View More</a>
+        </div>
+        </div>
+        <div class="media-mentions-custom">
+          <h3>Media Mentions</h3>
+          <div class="mention-container" v-for="mention in mentions">
+            <a class="mention-link" v-bind:href="mention.mentionLink">{{mention.mentionTitle}}</a>
+            <div class="mention-tag">{{mention.mentionDate}}</div>
+          </div>
+          <div style="text-align: center;">
+              <a href="" class="ctaBtn">View More</a>
+            </div>
+        </div>
+        <div class="media-kit">
+          <div class="container">
+            <div class="row no-gutters">
+              <div class="col-lg-3">
+                <img src="https://www2.arccorp.com/globalassets/products--participation/products/direct-data-solutions/matrix_231x170_directdatasolutions_2.png" alt="Media Kit">
+              </div>
+              <div class="col-lg-9">
+                <h2>Media Kit</h2>
+                <p>For timely data and air travel intelligence, Airlines Reporting Corporation (ARC) is a no-cost valuable resource for members of the media.</p>
+                <a href="" class="ctaBtn ctaBtn--graphic ctaBtn--main"><span><i class="icon-download"></i></span> Media kit</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      <!-- newsroom page END -->
+
+
+    </div>
+    <div class="data-panel__inside">
+      <div class="foreground foreground--left valign--middle">
+
+
+        <div class="body">
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section class="media-mentions basic-text basic-text--white" data-basic-text="true">
+      <div class="basic-text-inside">
+          
+          
+          <div class="rtf">
+              
+  
+  <p style="text-align: center;"><a href="https://www.travelweekly.com/Travel-News/Travel-Technology/ARC-leader-Mike-Premo-to-retire">ARC Leader Mike Premo to Retire at End of 2020</a><br>Travel Weekly<br>November 21, 2019</p>
+  <p style="text-align: center;"><a href="https://www.travelweekly.com/Travel-News/Travel-Agent-Issues/ARC-helps-feds-bust-fraud-ring">ARC Takes Equity Stake in Traxo</a><br>Travel Weekly<br>November 19, 2019</p>
+  <p style="text-align: center;"><a href="https://www.travelweekly.com/Travel-News/Travel-Agent-Issues/ARC-helps-feds-bust-fraud-ring">ARC helps feds bust $3.5M fraud ring<br></a>Travel Weekly<br>November 12, 2019</p>
+  <p style="text-align: center;"><a href="https://skift.com/2019/10/17/travel-agencies-have-long-struggled-with-southwest-now-this-is-changing/">Travel Agencies Have Long Struggled With Southwest. Now This Is Changing<br></a>Skift<br>October 17, 2019</p>
+  <p style="text-align: center;"><a href="https://www.traveldailynews.com/post/bcd-travel-named-2019-travel-agency-of-the-year-by-airlines-reporting-corporation" target="_blank">BCD Travel Named 2019 Travel Agency of the Year by Airlines Reporting Corporation<br></a>Travel Daily News<br>October 16, 2019</p>
+  <p style="text-align: center;"><a href="https://skift.com/2019/10/15/executive-qa-ceo-of-arc-on-transforming-airline-retailing-for-an-omnichannel-future/" target="_blank">Executive Q&amp;A: CEO of ARC on Transforming Airline Retailing for an Omnichannel Future</a><br>Skift<br>October 15, 2019</p>
+  <p style="text-align: center;"><a href="http://www.inboundreport.com/2019/10/15/arcs-dan-swain-on-connect-more-dmos-with-travel-agencies/" target="_blank">ARC’s Dan Swain on Connect More DMOs with Travel Agencies<br></a>Inbound<br>October 15, 2019</p>
+          </div>
+          <div class="twoButtons clearfix">
+              <div class="twoButtons__content">
+  
+  
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="page-grid page-grid--noThumbnails page-grid--centerItemText" data-section="page-grid" data-sticky-id="2019-news-releases">
+    <div class="page-grid__content">
+        <div class="page-grid__topContent">
+            
+            
+        </div>
+            <div class="page-grid__items page-grid__items--expanded" style="height: 3850px;">
+              <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+                <div class="content-block--pageItem">
+                  <div data-grid-content="image" class="content-block--pageItem__thumb">
+                    
+                        
+                        <img src="https://www2.arccorp.com/globalassets/products--participation/airlines/participation/chart-703x449.jpg" alt="Colorful chart ">
+                        
+                
+                  </div>
+                  <div data-grid-content="insideContent" class="content-block--pageItem__inside">
+                    <div class="content-block--pageItem__title">
+                
+                        <a href="/about-us/newsroom/2019-news-releases/pr20190206/" title="PowerSolutions 2019" class="ctaLink">ARC President and CEO Mike Premo to Speak at CCRA’s PowerSolutions</a>
+                    </div>
+                                <ul class="content-block--pageItem__metadata">
+                                <li>News Release</li>
+                                            <li>Feb 6, 2019</li>
+                                    </ul>    
+                    <div class="content-block--pageItem__body">
+                      
+                
+                <p class="leadin-text">Premo will Present on the Significance of NDC and ONE Order for Travel Agencies </p>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="content-block--pageItem">
+                  
+                  <div data-grid-content="image" class="content-block--pageItem__emptyThumb">
+                    
+                
+                  </div>
+                  <div data-grid-content="insideContent" class="content-block--pageItem__inside">
+                    <div class="content-block--pageItem__title">
+                
+                        <a href="/about-us/newsroom/2019-news-releases/pr20190131/" title="Super Bowl 2019" class="ctaLink">Travelers from Both Coasts Boost Atlanta Air Passenger Counts for Super Bowl LIII</a>
+                    </div>
+                                <ul class="content-block--pageItem__metadata">
+                                <li>News Release</li>
+                                            <li>Jan 31, 2019</li>
+                                    </ul>    
+                    <div class="content-block--pageItem__body">
+                      
+                
+                <p class="leadin-text">ARC Found Passenger Increases up to 40 Percent Compared to 2018 Numbers </p>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="content-block--pageItem">
+                  <div data-grid-content="image" class="content-block--pageItem__thumb">
+                    
+                        
+                        <img src="https://www2.arccorp.com/globalassets/_empty.jpg" alt="_empty.jpg">
+                        
+                
+                  </div>
+                  <div data-grid-content="insideContent" class="content-block--pageItem__inside">
+                    <div class="content-block--pageItem__title">
+                
+                        <a href="/about-us/newsroom/2019-news-releases/pr20190129/" title="2018 New Agencies" class="ctaLink">ARC Accredits 73 New Agencies in 2018</a>
+                    </div>
+                                <ul class="content-block--pageItem__metadata">
+                                <li>News Release</li>
+                                            <li>Jan 29, 2019</li>
+                                    </ul>    
+                    <div class="content-block--pageItem__body">
+                      
+                
+                <p class="leadin-text">More Than 12,000 Agency Retail Locations are Currently Endorsed </p>
+                    </div>
+                  </div>
+                </div>                        </div>
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/arc-reports-travel-agencies-sold-nearly-$8-billion-worth-of-air-tickets-in-september/" title="September 2019 Sales" class="ctaLink">ARC Reports Travel Agencies Sold Nearly $8 Billion Worth of Air Tickets in September</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Oct 21, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">September Also Saw a 3.7% Jump in Passenger Trips Compared to September 2018</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20191007/" title="2019 ARC Awards" class="ctaLink">ARC Honors Travel Industry Leaders at TravelConnect 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Oct 7, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">BCD Travel, Southwest Airlines and Oracle Recognized for Innovation and Industry Collaboration</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20191003_1/" title="Enhanced Agency BI Tool" class="ctaLink">Enhanced Agency BI Tool Expands  ARC’s Data Analytics Platform</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Oct 3, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Travel Agencies Benefit from Accelerated Processing and Expanded Data Horizons</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20191003/" title="ARC and Traxo Partnership" class="ctaLink">ARC and Traxo Partner to Provide Solution Supporting Airlines, Duty of Care Providers</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Oct 3, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">United Airlines is Solution’s First Participant</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190923/" title="August 2019 Sales" class="ctaLink">Travel Agency Air Ticket Sales Up 3% YTD Through August vs. 2018</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Sep 23, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Reports Increase in EMD Sales and Transactions in Last Month</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190918_1/" title="ARC Risk Check" class="ctaLink">ARC Releases Customer Validation Service for Small and Midsize Travel Agencies</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Sep 18, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Perseuss Fraud Intelligence Sharing Platform Powers Cloud-Based Solution </p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190918/" title="The Beat Live 2019" class="ctaLink">ARC EVP and COO Lauri Reishus to  Deliver Address on Air Travel Retailing</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Sep 18, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p><span class="leadin-text" style="font-size: 12pt; line-height: 107%; font-family: 'Times New Roman', serif; color: #212121; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"> <span>Industry Panel Keynote to Take Place at The Beat Live 2019</span></span></p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190912/" title="TravelConnect 2019" class="ctaLink">Travel Industry Visionaries to Headline ARC’s TravelConnect 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Sep 12, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">October’s Conference to Focus on Transforming Travel Retailing</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190828/" title="ASTA Award" class="ctaLink">ASTA Names ARC Technology and Transaction Partner of the Year</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Aug 28, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Recognized for Second Straight Year</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190826/" title="Fraud Awareness Month" class="ctaLink">ARC Dedicates September to Fraud Awareness and Mitigation Education</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Aug 26, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Free Fraud Prevention Webinars Available Throughout the Month</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190821/" title="ARC Pay" class="ctaLink">ARC Releases Payments API  Under New ARC Pay Platform</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Aug 21, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text"><span lang="EN-GB">ARC Pay API Introduced to Support an Evolving Travel Industry</span></p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190815/" title="July 2019 Sales" class="ctaLink">Travel Agency Air Ticket Sales Soar 4% to $8 Billion in July 2019 vs. 2018</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Aug 15, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Finds More Than 3% Increase in Both International and Domestic Trips</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190805/" title="ARC Partners with Southwest Airlines to Complement Distribution Strategy" class="ctaLink">ARC Partners with Southwest Airlines to Complement Distribution Strategy</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Aug 2, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p>Southwest Business Enabled by ARC’s Reporting and Settlement Platform</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190730/" title="The “Travel Journey” Highlights ARC’s 2019 GBTA Booth" class="ctaLink">The “Travel Journey” Highlights ARC’s 2019 GBTA Booth</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jul 30, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p><span lang="EN-GB">A touchscreen experience that represents the travel journey will intrigue visitors next week in the ARC booth during the 2019 GBTA Convention in Chicago. </span></p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190725/" title="ARC Forms Executive-Level Team to  Advance Strategic Initiatives" class="ctaLink">ARC Forms Executive-Level Team to  Advance Strategic Initiatives</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jul 25, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p><span>ARC announced today the formation of an executive-level team charged with prioritizing and executing on growth strategies to advance the global air travel industry. </span></p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190718/" title="June 2019 Sales" class="ctaLink">ARC Reports $1.75 Billion Jump in Travel Agency Air Ticket Sales First Half 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jul 18, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Reports Total Passenger Trips Grew by 2.4% in Same Period vs. 2018.</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190716/" title="ARC and Sabre Sign Agreement to Streamline Travel Agencies’ NDC Transition" class="ctaLink">ARC and Sabre Sign Agreement to Streamline Travel Agencies’ NDC Transition</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jul 16, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p>ARC and Sabre Corporation (NASDAQ: SABR) recently signed a forward-looking cooperative agreement to ensure travel agencies can easily align with future airline distribution strategies. </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190711/" title="ARC Launches New Analytics Platform for Airlines" class="ctaLink">ARC Launches New Analytics Platform for Airlines</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jul 11, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p>New Solution Offers Swift Processing, Daily-Level Analysis and More Historical Data </p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190710/" title="ARC’s Airline Customers Swell to Record 240 in First Half 2019" class="ctaLink">ARC’s Airline Customers Swell to  Record 240 in First Half 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jul 10, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p>Newly Accredited Travel Agencies Jump by 33 in Same Period </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190701/" title="ARC Finds Dominican Republic Ticket  Sales Down, Refunds Up in First Half 2019" class="ctaLink">ARC Finds Dominican Republic Ticket  Sales Down, Refunds Up in First Half 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jul 1, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p>Air Travel Swells to Mexico and Other Caribbean Islands in June </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190627/" title="ARC Co-Sponsored Research Finds Nearly Half of TMCs Have Employed NDC" class="ctaLink">ARC Co-Sponsored Research Finds Nearly Half of TMCs Have Employed NDC</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                            <li>Jun 27, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p><b>“</b>TMC NDC Adoption Barometer,” a new research report co-sponsored by Airlines Reporting Corporation (ARC) and distributed by industry publication The Beat, is now available for download.</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190625/" title="Workforce Names ARC’s Andrea Black a “Game Changer”" class="ctaLink">Workforce Names ARC’s Andrea Black a “Game Changer”</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jun 26, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p>Workforce Media awarded ARC’s own Andrea Black as a “Game Changer” in Human Resources! She joins a global elite group of other under 40-year-old HR professionals to receive the award.</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190617/" title="May 2019 Sales" class="ctaLink">ARC Reports Travel Agencies Sold Over  $9 Billion Worth of Air Tickets in May</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jun 17, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">May Also Saw a 3.5% Increase in Passenger Trips Compared to May 2018</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190605/" title="Cancun Again Ranks as Number One Destination for US Fliers this Summer" class="ctaLink">Cancun Again Ranks as Number One Destination for US Fliers this Summer</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jun 5, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Cancun, Mexico, continues to be the top destination for summer travelers flying from the U.S., according to Airlines Reporting Corporation’s (ARC) annual top 10 summer travel analysis.</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190521/" title="April 2019 Sales" class="ctaLink">ARC Reports a $500M Increase in  April Travel Agency Air Ticket Sales</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>May 22, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Average Round-Trip Domestic Ticket Price Remains Effectively Flat. </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190416/" title="March 2019 Sales" class="ctaLink">March 2019 Travel Agency Air Ticket Sales Climb as Ticket Prices Fall</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Apr 16, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Reports Passenger Trips Increased More Than 3% </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190409/" title="Retailing and Distribution Team" class="ctaLink">ARC Creates Strategic Team to Advance Airline Retailing and Distribution Goals</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Apr 9, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Company Will Increase Collaboration with Customers and Partners to Offer Unique Solutions</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190408/" title="IATA AIR Think Tank" class="ctaLink">ARC Joins IATA’s AIR Think Tank to  Help Shape Future of Airline Retailing</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Apr 8, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Managing Directors Chuck Fischer and Steve Solomon Named as Delegates</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190404/" title="ARC Blockskye Investment" class="ctaLink">ARC Invests in Travel Industry Blockchain Developer Blockskye</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Apr 4, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Investment Solidifies Company’s Relationship with Cutting-Edge Technology Company</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190403/" title="First Quarter New Customers" class="ctaLink">Four Airlines, 18 Travel Agencies Join ARC in First Quarter</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Apr 3, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">New Customers Continue Growth to 238 Participating Airlines, 12,100 Agency Locations</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190319/" title="ARC at UATP Distribution Conference" class="ctaLink">ARC CIO Dickie Oliver Included as Panelist at UATP’s Distribution Conference</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Mar 19, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Oliver to Discuss Applications for Blockchain in the Travel Industry</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190318/" title="February 2019 Sales" class="ctaLink">Travel Agency Air Ticket Sales Total $8.3 Billion in February 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Mar 18, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Reports Average Ticket Prices Remain Steady Year-Over-Year </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190315/" title="CAPA Aviation Summit" class="ctaLink">ARC President and CEO Mike Premo to Serve as Panelist at CAPA’s Aviation Summit</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Mar 15, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Premo to Discuss Traveler Behavior and Distribution Capabilities</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190307/" title="Aria Case Study" class="ctaLink">ARC Reporting Tool Saves Great GetAways Travel Time and Resources</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Mar 7, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Access to Real-Time Data and Reporting Helps GGA Maximize Partnerships</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190219/" title="January 2019 Sales" class="ctaLink">Travel Agency Air Ticket Sales Increase More Than 3 Percent to Start 2019</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Feb 19, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Reports International Passenger Trips Continue to Rise </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190214/" title="2019 Winter Travel" class="ctaLink">U. S. Air Ticket Sales Climb for Caribbean and Mexican Destinations This Winter</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Feb 14, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Found Fares to the Majority of Warm Weather Destinations also Increased</p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190213/" title="2019 ARC, Expedia Report" class="ctaLink">ARC and Expedia Group Release 2019 Travel Outlook Study</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Feb 13, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="MsoNormal" style="text-align: left;"><span class="leadin-text" style="font-size: 11.0pt; mso-bidi-font-size: 18.0pt; font-family: 'Times New Roman',serif;">New Report Suggests Timing Matters Most When Booking Travel</span></p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190206/" title="PowerSolutions 2019" class="ctaLink">ARC President and CEO Mike Premo to Speak at CCRA’s PowerSolutions</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Feb 6, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Premo will Present on the Significance of NDC and ONE Order for Travel Agencies </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190131/" title="Super Bowl 2019" class="ctaLink">Travelers from Both Coasts Boost Atlanta Air Passenger Counts for Super Bowl LIII</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jan 31, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Found Passenger Increases up to 40 Percent Compared to 2018 Numbers </p>
+		</div>
+	</div>
+</div>                        </div>
+                        <div class="page-grid__row page-grid__row--3 clearfix" data-page-grid="row">
+
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190129/" title="2018 New Agencies" class="ctaLink">ARC Accredits 73 New Agencies in 2018</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jan 29, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">More Than 12,000 Agency Retail Locations are Currently Endorsed </p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190117/" title="2018 Sales" class="ctaLink">Travel Agency Air Ticket Sales Soar 7.1 Percent in 2018</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jan 17, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">ARC Finds Average Ticket Price Remains Virtually Same as 2017</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-block--pageItem">
+	<div data-grid-content="insideContent" class="content-block--pageItem__inside">
+		<div class="content-block--pageItem__title">
+
+        <a href="/about-us/newsroom/2019-news-releases/pr20190109/" title="Blockchain PoC" class="ctaLink">ARC Successfully Completes Blockchain PoC With United Airlines and Blockskye</a>
+		</div>
+                <ul class="content-block--pageItem__metadata">
+                <li>News Release</li>
+                            <li>Jan 9, 2019</li>
+                    </ul>    
+		<div class="content-block--pageItem__body">
+			
+
+<p class="leadin-text">Companies Create Private Blockchain for Settlement of Direct Ticket Sales</p>
+		</div>
+	</div>
+</div>                        </div>
+            </div>
+        
+
+            </div>
+</section>
+
+
+
+
+  <footer>
+    <div class="border-image"></div>
+    <div class="footer-inside">
+      <div class="rtf">
+
+
+        <p><span>© 2018 Airlines Reporting Corporation (ARC). All rights reserved.</span></p>
+
+
+
+        <span class="footer-rtf-links">
+
+          <a href="/website-terms-of-use/" title="Terms">Terms</a>
+
+
+          <a href="/site-privacy-policy/" title="Privacy">Privacy</a>
+
+
+          <a href="/pci-data-security-standards/" title="PCI Standards">PCI Standards</a>
+
+
+          <a href="https://arccorp.statusdashboard.com/" title="Status" target="_blank">Status</a>
+        </span>
+      </div>
+
+
+
+      <ul class="footer-links-social">
+        <li>
+
+          <a href="https://www.schellmanco.com/certificate-directory" class="icon-iso_logo"></a>
+        </li>
+        <li>
+
+          <a href="https://twitter.com/ARCtalk" title="twitter" target="_blank" class="icon-twitter"></a>
+        </li>
+        <li>
+
+          <a href="https://www.facebook.com/ARCtalk" title="facebook" target="_blank" class="icon-facebook"></a>
+        </li>
+        <li>
+
+          <a href="https://www.linkedin.com/company/arc" title="LinkedIn" target="_blank" class="icon-linkedin"></a>
+        </li>
+        <li>
+
+          <a href="https://www.instagram.com/arctalk/" target="_blank" class="icon-instagram"></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://www.sc.pages02.net/lp/static/js/iMAWebCookie.js?5bff7538-15339576982-3f3d5eceea4051b7c82d96ba93c1b04e&h=www.pages02.net" type="text/javascript"></script>
+
+  <script src="https://arcintgepi.arccorp.com/js-Static/scripts/Tealeaf/eluminate.js"></script>
+  <script async defer src='https://www.google.com/recaptcha/api.js'></script>
+  <script type="text/javascript">
+    cmSetClientID("52790000|arccorp.com", true, "data.coremetrics.com", "arccorp.com");
+  </script>
+
+  <script src="https://arcintgepi.arccorp.com/globalassets/style/main.min.js?12345622432225ed332334234"></script>
+  <script src="https://arcintgepi.arccorp.com/globalassets/static/scripts.js?45432"></script>
+  <script src="https://arcintgepi.arccorp.com/static/js/foundation-custom.js"></script>
+  <script src="https://arcintgepi.arccorp.com/globalassets/static/app.js?3421"></script>
+
+  <script src='newsroom.min.js'></script>
+
+</body>
+
+</html>
