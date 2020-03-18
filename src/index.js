@@ -13,7 +13,8 @@ Vue.use(BootstrapVue);
 var newsroomData = {
   posts: [],
   postIndex: 0,
-  mentions: []
+  mentions: [],
+  mentionIndex: 0
 };
 
 var releaseArchiveData = {
@@ -26,15 +27,23 @@ function setPostData(el) {
     .find(".content-block--pageItem__title a")
     .text()
     .trim();
-  post.postTags = el
-    .find(".content-block--pageItem__metadata li")
-    .eq(0)
-    .text()
-    .split(",");
   post.postDate = el
     .find(".content-block--pageItem__metadata li")
-    .eq(1)
+    .eq(0)
     .text();
+
+  if (el.find(".content-block--pageItem__metadata li").length > 1) {
+    post.postTags = el
+      .find(".content-block--pageItem__metadata li")
+      .eq(0)
+      .text()
+      .split(",");
+    post.postDate = el
+      .find(".content-block--pageItem__metadata li")
+      .eq(1)
+      .text();
+  }
+
   post.postMonth = post.postDate.split(" ")[0].trim();
 
   switch (post.postMonth) {
@@ -113,7 +122,7 @@ function setMentions(el) {
   var stringArray = elString.split("<br>");
 
   mention.mentionTitle = el.find("a").text();
-  mention.mentionSource = stringArray[1].trim();
+  mention.mentionSource = stringArray[1].trim().replace("</a>", "");
   mention.mentionDate = stringArray[2].trim();
   mention.mentionLink = el.find("a").attr("href");
 
@@ -130,10 +139,37 @@ function generateNewsroom() {
     newsroomData.posts.push(setPostData(post));
   }
 
+  newsroomData.postIndex += 6;
+
   for (var i = 0; i < mentionLength; i++) {
     var mention = $(".media-mentions .rtf p").eq(i);
     newsroomData.mentions.push(setMentions(mention));
   }
+
+  return post;
+}
+
+function generateMoreNewsroom() {
+  var maxlength = $(".page-grid .content-block--pageItem").length;
+
+  console.log(newsroomData.postIndex);
+
+  var endofposts = newsroomData.postIndex + 6 >= maxlength;
+
+  console.log(endofposts);
+
+  var nextIndex = endofposts ? maxlength : newsroomData.postIndex + 6;
+
+  if (endofposts) {
+    $(".newsroom-content .ctaBtn").hide();
+  }
+
+  for (var i = newsroomData.postIndex; i < nextIndex; i++) {
+    var post = $(".page-grid .content-block--pageItem").eq(i);
+    newsroomData.posts.push(setPostData(post));
+  }
+
+  newsroomData.postIndex += 6;
 
   return post;
 }
@@ -149,6 +185,9 @@ var newsroom = new Vue({
         return "noImage";
       }
       return "";
+    },
+    showMoreNews: function() {
+      generateMoreNewsroom();
     }
   }
 });

@@ -294,7 +294,7 @@ $black: #333333;
 
     .post-meta {
       height: 200px;
-      padding: 15px 25px;
+      padding: 20px 25px 15px;
       background: #ffffff;
       position: relative;
       transition: height 1s;
@@ -409,9 +409,10 @@ $black: #333333;
     }
 
     .mention-container {
-      padding-top: 38px;
+      padding-top: 20px;
+      padding-bottom: 25px;
       border-bottom: 1px solid #b7b7b7;
-      padding-bottom: 27px;
+      
     }
 
     .mention-date {
@@ -422,17 +423,24 @@ $black: #333333;
     }
 
     .mention-link {
+      display: block;
       color: $arcteal;
       font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
       font-size: 1.5rem;
     }
 
     .mention-tag {
-      margin-top: 25px;
+      display: inline-block;
+      margin-top: 50px;
       color: #6c6c6c;
       font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
       font-size: 16px;
       line-height: 20px;
+    }
+
+    .mention-source {
+      display: inline-block;
+      margin-top: 50px;
     }
 
     .ctaBtn {

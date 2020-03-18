@@ -628,7 +628,7 @@
                   </ul>
                           <div class="sticky-nav__ctaItem">
           
-                  <a href="mailto:pabzug@arccorp.com" title="Media Inquiries" class="ctaLink ctaLink--right-arrow">Media Inquiries<i class="icon-right-arrow"></i></a>
+                  <a href="mailto:rspoon@arccorp.com" title="Media Inquiries" class="ctaLink ctaLink--right-arrow">Media Inquiries<i class="icon-right-arrow"></i></a>
           
                   </div>
                   </div>
@@ -650,9 +650,6 @@
 
                 </div>
                 <div class="post-meta">
-                <div class="post-date">
-                    {{post.postDate}}
-                  </div>
                 <span v-bind:href="post.postLink" class="post-title">
                     {{post.postTitle}}
                 </span>
@@ -668,17 +665,18 @@
           </div>
           </div>
           <div style="text-align: center;">
-          <a href="" class="ctaBtn">View More</a>
+          <a v-on:click="showMoreNews()" class="ctaBtn">View More</a>
         </div>
         </div>
         <div class="media-mentions-custom">
           <h3>Media Mentions</h3>
           <div class="mention-container" v-for="mention in mentions">
             <a class="mention-link" v-bind:href="mention.mentionLink">{{mention.mentionTitle}}</a>
-            <div class="mention-tag">{{mention.mentionDate}}</div>
+            <div class="mention-tag">{{mention.mentionDate}}</div> &nbsp;&centerdot;&nbsp;
+            <div class="mention-source">{{mention.mentionSource}}</div>
           </div>
           <div style="text-align: center;">
-              <a href="" class="ctaBtn">View More</a>
+              <a href="/about-us/newsroom/media-mentions/" class="ctaBtn">View More</a>
             </div>
         </div>
         <div class="media-kit">
