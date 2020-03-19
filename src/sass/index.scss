@@ -236,11 +236,11 @@ $black: #333333;
       &:hover {
         .post-image {
           height: 235px;
-          transition: height 1s;
+          transition: height 500ms;
         }
         .post-meta {
           height: 250px;
-          transition: height 1s;
+          transition: height 500ms;
         }
         .post-body {
           display: block;
@@ -278,7 +278,7 @@ $black: #333333;
 
     .post-image {
       height: 285px;
-      transition: height 1s;
+      transition: height 500ms;
     }
 
     .post-tags {
@@ -297,7 +297,7 @@ $black: #333333;
       padding: 20px 25px 15px;
       background: #ffffff;
       position: relative;
-      transition: height 1s;
+      transition: height 500ms;
     }
 
     .post-date {
@@ -311,7 +311,7 @@ $black: #333333;
     .post-body {
       display: none;
       color: #6c6c6c;
-      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      font-family: RobotoSlab-Regular, Arial, Helvetica, sans-serif;
       font-size: 12px;
       letter-spacing: 0.34px;
       line-height: 16px;

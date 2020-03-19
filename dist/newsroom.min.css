@@ -4236,11 +4236,11 @@ html {
       .newsroom .newsroom-post .post-container:hover .post-image,
       .release-archive .newsroom-post .post-container:hover .post-image {
         height: 235px;
-        transition: height 1s; }
+        transition: height 500ms; }
       .newsroom .newsroom-post .post-container:hover .post-meta,
       .release-archive .newsroom-post .post-container:hover .post-meta {
         height: 250px;
-        transition: height 1s; }
+        transition: height 500ms; }
       .newsroom .newsroom-post .post-container:hover .post-body,
       .release-archive .newsroom-post .post-container:hover .post-body {
         display: block; }
@@ -4268,7 +4268,7 @@ html {
     .newsroom .newsroom-post .post-image,
     .release-archive .newsroom-post .post-image {
       height: 285px;
-      transition: height 1s; }
+      transition: height 500ms; }
     .newsroom .newsroom-post .post-tags,
     .release-archive .newsroom-post .post-tags {
       position: absolute;
@@ -4285,7 +4285,7 @@ html {
       padding: 20px 25px 15px;
       background: #ffffff;
       position: relative;
-      transition: height 1s; }
+      transition: height 500ms; }
     .newsroom .newsroom-post .post-date,
     .release-archive .newsroom-post .post-date {
       font-size: 0.875rem;
@@ -4297,7 +4297,7 @@ html {
     .release-archive .newsroom-post .post-body {
       display: none;
       color: #6c6c6c;
-      font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+      font-family: RobotoSlab-Regular, Arial, Helvetica, sans-serif;
       font-size: 12px;
       letter-spacing: 0.34px;
       line-height: 16px;
