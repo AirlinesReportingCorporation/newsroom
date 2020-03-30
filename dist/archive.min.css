@@ -4155,14 +4155,30 @@ html {
   font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif; }
   .newsroom .newsroom-jumbotron,
   .release-archive .newsroom-jumbotron {
-    background: #242039 url("https://www2.arccorp.com/globalassets/homepage/redesign/slides/jumbotron_retina_Traxo.jpg") center center no-repeat;
+    background: #242039 url("https://www2.arccorp.com/globalassets/about-us/newsroom/images/article/newsroom-article-mh-image7.jpg") center center no-repeat;
     background-size: cover;
     padding: 243px 0 53px 52px;
     max-width: 1013px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative;
+    z-index: 3; }
+    .newsroom .newsroom-jumbotron:after,
+    .release-archive .newsroom-jumbotron:after {
+      content: "";
+      position: absolute;
+      background: #000000;
+      opacity: 0.4;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      max-width: 1013px;
+      z-index: 3; }
     .newsroom .newsroom-jumbotron .mainPost,
     .release-archive .newsroom-jumbotron .mainPost {
-      max-width: 545px; }
+      max-width: 545px;
+      position: relative;
+      z-index: 4; }
       .newsroom .newsroom-jumbotron .mainPost .mainTag,
       .release-archive .newsroom-jumbotron .mainPost .mainTag {
         color: #ffffff;
@@ -4214,7 +4230,7 @@ html {
       color: #585858; }
   .newsroom .newsroom-post,
   .release-archive .newsroom-post {
-    padding: 16px 0;
+    padding: 16px 2px;
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
     position: relative; }
     .newsroom .newsroom-post:nth-child(3n + 1) .post-container,
@@ -4259,12 +4275,13 @@ html {
       display: none; }
     .newsroom .newsroom-post .noImage .post-title,
     .release-archive .newsroom-post .noImage .post-title {
-      font-size: 26px; }
+      font-size: 26px;
+      line-height: 1.2; }
     .newsroom .newsroom-post .noImage .post-body,
     .release-archive .newsroom-post .noImage .post-body {
       display: block !important;
       font-size: 16px;
-      line-height: 1.2; }
+      line-height: 1.5; }
     .newsroom .newsroom-post .post-image,
     .release-archive .newsroom-post .post-image {
       height: 285px;
@@ -4422,6 +4439,16 @@ html {
   .newsroom-post {
     margin-right: 0 !important;
     margin-left: 0 !important; }
+  .post-meta {
+    height: auto !important; }
+    .post-meta .post-body {
+      display: block !important; }
   .post-container {
-    height: auto; } }
+    height: auto !important;
+    margin-left: 15px;
+    margin-right: 15px; }
+  .post-tags {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important; } }
 

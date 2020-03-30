@@ -131,15 +131,32 @@ $black: #333333;
 
   .newsroom-jumbotron {
     background: #242039
-      url("https://www2.arccorp.com/globalassets/homepage/redesign/slides/jumbotron_retina_Traxo.jpg")
+      url("https://www2.arccorp.com/globalassets/about-us/newsroom/images/article/newsroom-article-mh-image7.jpg")
       center center no-repeat;
     background-size: cover;
     padding: 243px 0 53px 52px;
     max-width: 1013px;
     margin: 0 auto;
+    position: relative;
+    z-index: 3;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: #000000;
+      opacity: 0.4;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      max-width: 1013px;
+      z-index: 3;
+    }
 
     .mainPost {
       max-width: 545px;
+      position: relative;
+      z-index: 4;
 
       .mainTag {
         color: #ffffff;
@@ -203,7 +220,7 @@ $black: #333333;
   }
 
   .newsroom-post {
-    padding: 16px 0;
+    padding: 16px 2px;
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
     position: relative;
 
@@ -267,12 +284,13 @@ $black: #333333;
 
       .post-title {
         font-size: 26px;
+        line-height: 1.2;
       }
 
       .post-body {
         display: block !important;
         font-size: 16px;
-        line-height: 1.2;
+        line-height: 1.5;
       }
     }
 
@@ -412,7 +430,6 @@ $black: #333333;
       padding-top: 20px;
       padding-bottom: 25px;
       border-bottom: 1px solid #b7b7b7;
-      
     }
 
     .mention-date {
@@ -470,7 +487,22 @@ $black: #333333;
     margin-left: 0 !important;
   }
 
+  .post-meta {
+    height: auto !important;
+    .post-body {
+      display: block !important;
+    }
+  }
+
   .post-container {
-    height: auto;
+    height: auto !important;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .post-tags {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
   }
 }
