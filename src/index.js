@@ -6,8 +6,6 @@ import $ from "jquery";
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
 
-require("paroller.js");
-
 Vue.use(BootstrapVue);
 
 var newsroomData = {

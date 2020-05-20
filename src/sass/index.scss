@@ -131,7 +131,7 @@ $black: #333333;
 
   .newsroom-jumbotron {
     background: #242039
-      url("https://www2.arccorp.com/globalassets/about-us/newsroom/images/article/newsroom-article-mh-image7.jpg")
+      url("https://www2.arccorp.com/globalassets/about-us/newsroom/images/article/Newsroom-Article-MH-May20.jpg")
       center center no-repeat;
     background-size: cover;
     padding: 243px 0 53px 52px;
@@ -139,6 +139,8 @@ $black: #333333;
     margin: 0 auto;
     position: relative;
     z-index: 3;
+    cursor: default;
+    //text-shadow: 1px 1px 5px #000000;
 
     &:after {
       content: "";
@@ -448,7 +450,7 @@ $black: #333333;
 
     .mention-tag {
       display: inline-block;
-      margin-top: 50px;
+      margin-top: 7px;
       color: #6c6c6c;
       font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
       font-size: 16px;
@@ -457,7 +459,7 @@ $black: #333333;
 
     .mention-source {
       display: inline-block;
-      margin-top: 50px;
+      margin-top: 7px;
     }
 
     .ctaBtn {
@@ -467,8 +469,6 @@ $black: #333333;
   }
 }
 
-@media screen and (min-width: 992px) {
-}
 
 @media screen and (min-width: 768px) {
   .sticky-nav__content {
@@ -479,6 +479,10 @@ $black: #333333;
     max-width: 1013px;
     width: 100%;
   }
+
+  .sticky-nav__linksList .sticky-nav__linkItem {
+    max-width: none;
+}
 }
 
 @media screen and (max-width: 992px) {
@@ -495,7 +499,6 @@ $black: #333333;
   }
 
   .post-container {
-    height: auto !important;
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -504,5 +507,11 @@ $black: #333333;
     position: relative !important;
     left: auto !important;
     bottom: auto !important;
+  }
+}
+
+@media screen and (max-width: 767.8px) {
+  .post-container {
+    height: auto !important;
   }
 }
