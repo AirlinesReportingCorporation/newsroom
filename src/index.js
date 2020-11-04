@@ -12,7 +12,8 @@ var newsroomData = {
   posts: [],
   postIndex: 0,
   mentions: [],
-  mentionIndex: 0
+  mentionIndex: 0,
+  travel: false
 };
 
 var releaseArchiveData = {
@@ -132,12 +133,27 @@ function generateNewsroom() {
 
   var mentionLength = $(".media-mentions .rtf p").length;
 
-  for (var i = newsroomData.postIndex; i < 6; i++) {
+  for (var i = newsroomData.postIndex; newsroomData.posts.length < 6; i++) {
     var post = $(".page-grid .content-block--pageItem").eq(i);
-    newsroomData.posts.push(setPostData(post));
-  }
 
-  newsroomData.postIndex += 6;
+    var postTitle = post
+      .find(".content-block--pageItem__title a")
+      .text()
+      .trim();
+
+    //if first air ticket volume, set to true and post to array
+    if (
+      postTitle.indexOf("US Travel Agency Seven-Day") > -1 &&
+      !newsroomData.travel
+    ) {
+      newsroomData.posts.push(setPostData(post));
+      newsroomData.travel = true;
+    } else if (postTitle.indexOf("US Travel Agency Seven-Day") == -1) {
+      newsroomData.posts.push(setPostData(post));
+    }
+
+    newsroomData.postIndex = i;
+  }
 
   for (var i = 0; i < mentionLength; i++) {
     var mention = $(".media-mentions .rtf p").eq(i);
@@ -156,18 +172,33 @@ function generateMoreNewsroom() {
 
   console.log(endofposts);
 
-  var nextIndex = endofposts ? maxlength : newsroomData.postIndex + 6;
+  var nextIndex = newsroomData.posts.length + 6;
 
   if (endofposts) {
     $(".newsroom-content .ctaBtn").hide();
   }
 
-  for (var i = newsroomData.postIndex; i < nextIndex; i++) {
+  for (var i = newsroomData.postIndex + 1; newsroomData.posts.length < nextIndex; i++) {
     var post = $(".page-grid .content-block--pageItem").eq(i);
-    newsroomData.posts.push(setPostData(post));
-  }
 
-  newsroomData.postIndex += 6;
+    var postTitle = post
+      .find(".content-block--pageItem__title a")
+      .text()
+      .trim();
+
+    //if first air ticket volume, set to true and post to array
+    if (
+      postTitle.indexOf("US Travel Agency Seven-Day") > -1 &&
+      !newsroomData.travel
+    ) {
+      newsroomData.posts.push(setPostData(post));
+      newsroomData.travel = true;
+    } else if (postTitle.indexOf("US Travel Agency Seven-Day") == -1) {
+      newsroomData.posts.push(setPostData(post));
+    }
+
+    newsroomData.postIndex = i;
+  }
 
   return post;
 }
@@ -191,3 +222,5 @@ var newsroom = new Vue({
 });
 
 generateNewsroom();
+
+console.log(newsroomData);
